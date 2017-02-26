@@ -1,4 +1,4 @@
-// Lets play with some box fitting.
+// Lets play with some circle packing.
 
 var circles = [];
 
