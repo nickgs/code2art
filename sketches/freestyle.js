@@ -1,7 +1,10 @@
-let posX = 10;
+
+let posX = 10; // Globally defined
 let posY = 10;
 
 function setup() {
+	
+
 	
 	createCanvas(windowWidth, windowHeight);
 	background("#000000");
@@ -11,6 +14,7 @@ function setup() {
 
 
 function draw() {
+
 	background('rgba(255,255,255, 0.05)');
 	
 	//let r = random(windowHeight);
