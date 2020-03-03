@@ -1,10 +1,46 @@
+body {
+    background-color: AliceBlue;
+}
+
 a {
     color: #FF0000;
-    font-size: 1rem;
+    font-size: 2rem;
+}
+
+h1 {
+    font-family: "Dancing Script", sans-serif;
 }
 		  
 p {
  	border: 3px dotted pink;
   	padding:  10px;
   	margin: 10px;
+  	font-family: Roboto;
 }
+
+a.active {
+    border-right: 5px solid black;
+    padding-right: 50px;
+    color: black;
+}
+
+img.active {
+    border: 10px solid tomato;
+}
+
+#external {
+    border: 2px solid red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
