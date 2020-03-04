@@ -1,6 +1,6 @@
 
-let ydir = 20;
-let xdir = 5;
+let ydir = 10;
+let xdir = 10;
 
 let ypos = 0;
 let xpos = 0;
@@ -20,19 +20,28 @@ function setup() {
 
 //  Our draw function.
 function draw() {
-	background("black");
 	
 	fill("white");
 	rect(xpos, ypos, 20, 20);
 	
-	if(xpos >= windowWidth - 20) {
-		xdir = xdir * -1;
+	if(xpos >= windowWidth) {
+		xdir *= -1;
 	}
 	
 	if(xpos <= 0) {
 		xdir *= -1;
 	}
+	
+	
+	if(ypos >= windowHeight) {
+		ydir *= -1;
+	}
+	
+	if(ypos <= 0) {
+		ydir *= -1;
+	}
 
 	xpos = xpos + xdir;
+	ypos = ypos + ydir;
 	
 }
