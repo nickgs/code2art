@@ -1,5 +1,5 @@
 
-let ydir = 20;
+let ydir = 5;
 let xdir = 5;
 
 let ypos = 0;
@@ -12,8 +12,10 @@ function setup() {
 	
 	background("black");
 	
-	xpos = windowWidth/2;
-	ypos = windowHeight/2;
+	xpos = random(windowWidth);
+	ypos = random(windowHeight);
+	
+	fill("white");
 	
 }
 
@@ -22,17 +24,33 @@ function setup() {
 function draw() {
 	background("black");
 	
-	fill("white");
+
 	rect(xpos, ypos, 20, 20);
 	
-	if(xpos >= windowWidth - 20) {
+	// Right wall
+	if(xpos >= windowWidth - 20 || xpos <= 0) {
 		xdir = xdir * -1;
+		fill(random(255), random(255), random(255));
 	}
 	
-	if(xpos <= 0) {
-		xdir *= -1;
+	
+	// Left wall
+	// if(xpos <= 0) {
+	// 	xdir *= -1;
+	// }
+
+	//  Top wall
+	if(ypos >= windowHeight - 20) {
+		ydir = ydir * -1;
+	}
+	
+	
+	// Bottom wall
+	if(ypos <= 0) {
+		ydir *= -1;
 	}
 
 	xpos = xpos + xdir;
+	ypos = ypos + ydir;
 	
 }
