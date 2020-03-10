@@ -1,5 +1,8 @@
 body {
     background-color: AliceBlue;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -8,19 +11,15 @@ a {
 }
 
 h1 {
-    font-family: "Dancing Script", sans-serif;
+    font-family: 'Oxanium', cursive;
+    background-color: red;
+    margin: 0;
+    text-align: center;
+    height: 100px;
+    padding-top: 38px;
 }
 		  
-p {
- 	border: 3px dotted pink;
-  	padding:  10px;
-  	margin: 10px;
-  	font-family: Roboto;
-}
-
 a.active {
-    border-right: 5px solid black;
-    padding-right: 50px;
     color: black;
 }
 
@@ -31,6 +30,45 @@ img.active {
 #external {
     border: 2px solid red;
 }
+
+.nav {
+	text-align: center;
+}
+
+ul {
+	display: inline-block;
+}
+
+li {
+	float: left;
+	list-style: none;
+}
+
+.nav {
+	background-color: #0b1b2d;
+}
+
+.nav a {
+	text-decoration: none;
+	padding: 10px;
+	margin: 5px;
+	background-color: cadetblue;
+	color: black;
+	border-radius: 5px;
+
+}
+
+.nav a:hover {
+	background-color: white;
+	border: 1px solid cadetblue;
+}
+
+#content {
+	margin: 10px;
+	padding: 10px;
+}
+
+
 
 
 
