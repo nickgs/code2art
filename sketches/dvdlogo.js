@@ -5,6 +5,17 @@ let xdir = 5;
 let ypos = 0;
 let xpos = 0;
 
+let img;
+
+let imageWidth = 220;
+let imageHeight = 158;
+
+function preload() {
+	
+	img = loadImage('images/dvdlogo.png');
+
+}
+
 // Our setup function.
 function setup() {
 	
@@ -12,11 +23,11 @@ function setup() {
 	
 	background("black");
 	
-	xpos = random(windowWidth);
-	ypos = random(windowHeight);
+	xpos = random(windowWidth - imageWidth);
+	ypos = random(windowHeight - imageHeight);
 	
-	fill("white");
 	
+	tint(random(255), random(255), random(255));
 }
 
 
@@ -24,30 +35,33 @@ function setup() {
 function draw() {
 	background("black");
 	
+	// Calling the image function.
+	image(img, xpos, ypos, imageWidth, imageHeight);
 
-	rect(xpos, ypos, 20, 20);
-	
 	// Right wall
-	if(xpos >= windowWidth - 20 || xpos <= 0) {
+	if(xpos + imageWidth  >= windowWidth) {
 		xdir = xdir * -1;
-		fill(random(255), random(255), random(255));
+		tint(random(255), random(255), random(255));
 	}
 	
 	
 	// Left wall
-	// if(xpos <= 0) {
-	// 	xdir *= -1;
-	// }
+	if(xpos <= 0) {
+		xdir *= -1;
+		tint(random(255), random(255), random(255));
+	}
 
-	//  Top wall
-	if(ypos >= windowHeight - 20) {
+	//  Bottom wall
+	if(ypos + imageHeight >= windowHeight) {
 		ydir = ydir * -1;
+		tint(random(255), random(255), random(255));
 	}
 	
 	
-	// Bottom wall
+	// Top wall
 	if(ypos <= 0) {
 		ydir *= -1;
+		tint(random(255), random(255), random(255));
 	}
 
 	xpos = xpos + xdir;
