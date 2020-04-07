@@ -1,0 +1,24 @@
+.layout-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item {
+    width: 200px;
+    height: 112px;
+    background-color: tomato;
+    border: 2px solid #555555;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.hero {
+    flex-basis: 100%;
+    background: #0000ff url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/city.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 350px;
+    background-blend-mode: luminosity;
+}
