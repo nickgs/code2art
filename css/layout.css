@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .item {
@@ -15,10 +16,19 @@
 
 .hero {
     flex-basis: 100%;
-    background: #0000ff url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/city.jpg);
+    background: #505050 url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/city.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     min-height: 350px;
     background-blend-mode: luminosity;
+    text-align: center;
+    line-height: 350px;
+    font-size: 3em;
+}
+
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
