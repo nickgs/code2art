@@ -32,3 +32,22 @@
     justify-content: center;
     align-items: center;
 }
+
+
+/* Layout Patterns */
+
+.flex-layout-1 {
+    display: flex;
+}
+
+.child {
+    height: 100px;
+    background-color: tomato;
+    border: 1px solid black;
+    
+    flex-grow: 1;
+}
+
+.favorite {
+    flex-grow: 2;
+}
