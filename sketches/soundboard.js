@@ -1,0 +1,67 @@
+let value = 0;
+let pad1;
+let pad2;
+
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+	background("black");
+	
+	pad1 = new Pad(10, 100, 232);
+	pad2 = new Pad(110, 100, 400);
+	
+}
+
+function draw() {
+	background("black");
+	pad1.draw();
+	pad2.draw();
+}
+
+function keyPressed() {
+  if(keyCode == 68) { // the D key
+  	pad1.play();
+  }
+  if(keyCode == 70) { // the D key
+  	pad2.play();
+  }
+}
+
+
+class Pad {
+	
+	constructor(x, y, freq) {
+		
+		this.x = x;
+		this.y = y;
+		this.width = 100;
+		this.height = 100;
+		this.freq = freq;
+		
+		// Oscillator, Envelope, Analyzer
+		this.osc = new p5.Oscillator();
+		this.osc.amp(0);
+		this.osc.setType('sine');
+		this.osc.start();
+		
+		this.env = new p5.Env();
+		// attackTime, decayTime, sustainRatio, releaseTime
+		this.env.setADSR(0.001, 0.1, 0.2, 0.1);
+		this.env.setRange(3, 0);
+		
+		this.analyzer = new p5.Amplitude();
+		this.analyzer.setInput(this.env);
+	}
+	
+	draw() {
+		let level  = this.analyzer.getLevel();
+		let levelHeight = map(level, 0, 0.4, 0, this.height)
+		
+		rect(this.x, this.y, this.width, -levelHeight);
+	}
+	
+	play() {
+		this.osc.freq(this.freq);
+		this.env.play(this.osc);
+	}
+	
+}
