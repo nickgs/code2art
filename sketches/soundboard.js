@@ -1,28 +1,38 @@
-let value = 0;
-let pad1;
-let pad2;
+let pads = [];
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	background("black");
 	
-	pad1 = new Pad(10, 100, 232);
-	pad2 = new Pad(110, 100, 400);
+	for(let i = 0; i < 10; i++) {
+		pads[i] = new Pad(10+(i*100), 100, 100+(i*5));
+	}
 	
 }
 
 function draw() {
 	background("black");
-	pad1.draw();
-	pad2.draw();
+	
+	for(let i = 0; i < 10; i++) {
+		pads[i].draw();	
+	}
 }
 
 function keyPressed() {
   if(keyCode == 68) { // the D key
-  	pad1.play();
+  	pads[0].play();
   }
-  if(keyCode == 70) { // the D key
-  	pad2.play();
+  if(keyCode == 70) { // the F key
+  	pads[1].play();
+  }
+  if(keyCode == 71) { 
+  	pads[2].play();
+  }
+  if(keyCode == 72) { 
+  	pads[3].play();
+  }
+  if(keyCode == 74) { 
+  	pads[4].play();
   }
 }
 
