@@ -63,4 +63,16 @@
     flex-grow: 2;
 }
 
+/* Our new layout. 1/2 screen layout.*/
+.layout-half {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.layout-half div {
+    background-color: red;
+    border: 1px solid black;
+    height: 100vh;
+}
+
 

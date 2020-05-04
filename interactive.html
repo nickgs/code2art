@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Example</title>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href='css/styles.css'/>
+  <link rel="stylesheet" type="text/css" href='css/layout.css'/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+</head>
+<body>
+  <div class="nav">
+      <ul>
+          <li><a class="active" href="/">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+      </ul>
+  </div>
+  
+  <div class="layout-half">
+  	<div class="content">
+  		<img src="images/excercised.gif"></img>
+  	</div>
+  	<div id="sketch">
+  	
+  	</div>
+  </div>
+  
+  <script>
+  	// free to write JS!! 
+  	let sketch = function(p) {
+  		p.setup = function() {
+  			p.createCanvas(500, 500);
+  			p.background("red");
+  		}
+  		p.draw = function() {
+  			p.fill("white");
+  			p.circle(p.random(500), p.random(500), 10);
+  		}
+  	};
+  	new p5(sketch, window.document.getElementById('sketch'));
+  </script>
+</body>
+</html>
