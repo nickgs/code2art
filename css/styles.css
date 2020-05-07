@@ -68,6 +68,18 @@ li {
 	padding: 10px;
 }
 
+.layout-half .content {
+    padding: 20px;
+}
+
+.layout-half .content h5 {
+    font-size: 3rem;
+    margin: 0px;
+}
+
+.layout-half .content p {
+    font-size: 1.5rem;
+}
 
 
 

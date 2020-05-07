@@ -18,7 +18,8 @@
   
   <div class="layout-half">
   	<div class="content">
-  		<img src="images/excercised.gif"></img>
+  		<h5>Integrating Javascript</h5>
+  		<p>In this example we will be exploring how to bring in some interactive features on our website</p>
   	</div>
   	<div id="sketch">
   	
@@ -28,13 +29,38 @@
   <script>
   	// free to write JS!! 
   	let sketch = function(p) {
+  		let e = [];
   		p.setup = function() {
   			p.createCanvas(500, 500);
   			p.background("red");
+  			
+  			e[0] = new Exploder(p.random(500), p.random(500));
+  			e[1] = new Exploder(p.random(500), p.random(500));
+  			e[2] = new Exploder(p.random(500), p.random(500));
+  			
   		}
   		p.draw = function() {
-  			p.fill("white");
-  			p.circle(p.random(500), p.random(500), 10);
+			e[0].draw();
+			e[1].draw();
+			e[2].draw();
+			
+  		}
+  		
+  		class Exploder {
+  			// This is where we can describe what a SINGLE exploder should do.
+  			constructor(x, y) {
+  				this.x = x;
+  				this.y = y;
+  				
+  				this.radius = 10;
+  			}
+  			
+  			draw() {
+  				p.fill("white");
+  				p.circle(this.x, this.y, this.radius);
+  				
+  				this.radius += 5;
+  			}
   		}
   	};
   	new p5(sketch, window.document.getElementById('sketch'));
